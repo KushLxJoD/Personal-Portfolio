@@ -1,0 +1,747 @@
+<!--
+Filename: Birthday_Portfolio_Style.html
+One-file portfolio-style birthday website with pink romantic theme.
+-->
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Happy Birthday — MY Mutton Biriyani</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --bg: #fff0f6;
+                --card: #ffffffcc;
+                --pink1: #ff6b9a;
+                --pink2: #ff9ab4;
+                --accent: #ffd6e0;
+                --muted: #6b6b6b;
+                --glass: rgba(255, 255, 255, 0.6);
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                font-family: 'Nunito', system-ui, Segoe UI, Roboto;
+                scroll-behavior: smooth
+            }
+
+            body {
+                background: linear-gradient(180deg, var(--bg), #fff);
+                color: #111
+            }
+
+            /* NAV */
+            .nav {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 36px;
+                z-index: 50
+            }
+
+            .brand {
+                font-weight: 800;
+                color: var(--pink1);
+                letter-spacing: 0.6px
+            }
+
+            .nav a {
+                margin-left: 16px;
+                text-decoration: none;
+                color: #333;
+                font-weight: 700
+            }
+
+            /* HERO */
+            header.hero {
+                min-height: 100vh;
+                display: grid;
+                place-items: center;
+                padding: 60px 20px;
+                position: relative;
+                overflow: hidden
+            }
+
+            .hero-grid {
+                max-width: 1100px;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 420px;
+                gap: 36px;
+                align-items: center
+            }
+
+            .title {
+                font-size: 48px;
+                line-height: 1.02;
+                margin: 0
+            }
+
+            .title .accent {
+                background: linear-gradient(90deg, var(--pink1), var(--pink2));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent
+            }
+
+            .lead {
+                color: var(--muted);
+                margin-top: 12px;
+                font-size: 16px
+            }
+
+            .cta {
+                margin-top: 22px
+            }
+
+            .btn {
+                background: linear-gradient(90deg, var(--pink1), var(--pink2));
+                padding: 12px 18px;
+                border-radius: 12px;
+                color: white;
+                border: none;
+                font-weight: 800;
+                cursor: pointer;
+                box-shadow: 0 12px 30px rgba(255, 107, 154, 0.12)
+            }
+
+            .btn.ghost {
+                background: transparent;
+                border: 2px solid rgba(255, 107, 154, 0.16);
+                color: var(--pink1);
+                box-shadow: none
+            }
+
+            /* PROFILE CARD */
+            .profile-card {
+                background: var(--card);
+                border-radius: 18px;
+                padding: 18px;
+                box-shadow: 0 20px 50px rgba(15, 15, 15, 0.06);
+                backdrop-filter: blur(6px);
+                border: 1px solid rgba(255, 255, 255, 0.6)
+            }
+
+            .profile-photo {
+                width: 100%;
+                border-radius: 12px;
+                overflow: hidden;
+                border: 6px solid rgba(255, 255, 255, 0.6)
+            }
+
+            .photo-img {
+                display: block;
+                width: 100%;
+                height: 320px;
+                object-fit: cover
+            }
+
+            .name {
+                margin-top: 14px;
+                font-weight: 800;
+                font-size: 20px
+            }
+
+            .role {
+                color: var(--muted);
+                font-size: 13px;
+                margin-top: 6px
+            }
+
+            .romance {
+                margin-top: 14px;
+                font-size: 15px;
+                color: #34293b;
+                line-height: 1.45
+            }
+
+            /* SECTIONS */
+            section {
+                padding: 80px 20px
+            }
+
+            .container {
+                max-width: 1100px;
+                margin: 0 auto
+            }
+
+            h2.section-title {
+                font-size: 28px;
+                margin: 0 0 12px 0
+            }
+
+            .subtitle {
+                color: var(--muted);
+                margin-bottom: 22px
+            }
+
+            /* GALLERY */
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px
+            }
+
+            .gallery img {
+                width: 85%;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+
+            /* MESSAGE */
+            .message-wrap {
+                background: linear-gradient(180deg, #fff, #fff0f6);
+                padding: 28px;
+                border-radius: 16px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px
+            }
+
+            .msg {
+                font-size: 18px;
+                max-width: 900px;
+                text-align: center;
+                color: #2d1a2b;
+                white-space: pre-line
+            }
+
+            .reveal {
+                background: linear-gradient(90deg, var(--pink2), var(--pink1));
+                color: white;
+                padding: 10px 20px;
+                border-radius: 12px;
+                border: none;
+                font-weight: 800;
+                cursor: pointer
+            }
+
+            /* FOOTER */
+            footer {
+                padding: 48px 20px 60px;
+                text-align: center;
+                color: var(--muted)
+            }
+
+            /* MARRY ME BOX */
+            .marry-box {
+                margin-top: 40px;
+                padding: 36px 24px;
+                background: linear-gradient(180deg, #fff0f6, #fff);
+                border-radius: 20px;
+                border: 1.5px solid rgba(255, 107, 154, 0.15);
+            }
+
+            .marry-question {
+                font-size: 30px;
+                font-weight: 900;
+                color: var(--pink1);
+                margin-bottom: 10px;
+            }
+
+            .no-msg {
+                min-height: 30px;
+                font-size: 16px;
+                font-weight: 800;
+                color: var(--pink1);
+                margin-bottom: 20px;
+                transition: opacity 0.25s;
+                opacity: 0;
+            }
+
+            /* playground: relative container so absolute children work */
+            .btn-playground {
+                position: relative;
+                width: 100%;
+                height: 160px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            #yesBtn2 {
+                position: absolute;
+                left: calc(50% - 130px);
+                top: 55px;
+                font-size: 18px;
+                padding: 14px 44px;
+                border-radius: 14px;
+            }
+
+            #noBtn2 {
+                position: absolute;
+                left: calc(50% + 20px);
+                top: 55px;
+                font-size: 18px;
+                padding: 14px 40px;
+                border-radius: 14px;
+                background: transparent;
+                border: 2px solid rgba(255, 107, 154, 0.35);
+                color: var(--pink1);
+                font-weight: 800;
+                cursor: pointer;
+                font-family: inherit;
+                transition: left 0.12s ease, top 0.12s ease;
+            }
+
+            /* YES OVERLAY */
+            #yesOverlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(255, 240, 246, 0.97);
+                z-index: 200;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 32px;
+            }
+
+            #yesOverlay img {
+                width: min(260px, 75vw);
+                height: min(260px, 75vw);
+                object-fit: cover;
+                border-radius: 50%;
+                border: 8px solid #ff9ab4;
+                margin-bottom: 28px;
+            }
+
+            .ty-text {
+                font-size: clamp(30px, 6vw, 54px);
+                font-weight: 900;
+                color: var(--pink1);
+                line-height: 1.1
+            }
+
+            .ty-sub {
+                margin-top: 14px;
+                font-size: 18px;
+                color: #6b6b6b;
+                max-width: 420px
+            }
+
+            .close-hint {
+                margin-top: 24px;
+                font-size: 13px;
+                color: #bbb;
+                cursor: pointer
+            }
+
+            /* ANIMATIONS */
+            .fade-up {
+                opacity: 0;
+                transform: translateY(14px);
+                transition: all 700ms cubic-bezier(.2, .9, .2, 1)
+            }
+
+            .in-view {
+                opacity: 1;
+                transform: none
+            }
+
+            /* CONFETTI */
+            canvas.conf {
+                position: fixed;
+                inset: 0;
+                pointer-events: none;
+                z-index: 60
+            }
+
+            /* ── RESPONSIVE ── */
+            @media (max-width: 1100px) {
+                .hero-grid {
+                    grid-template-columns: 1fr 360px
+                }
+            }
+
+            @media (max-width: 980px) {
+                .hero-grid {
+                    grid-template-columns: 1fr
+                }
+
+                .photo-img {
+                    height: 260px
+                }
+
+                .gallery {
+                    grid-template-columns: repeat(2, 1fr)
+                }
+
+                .nav {
+                    top: 10px;
+                    padding: 10px 20px
+                }
+
+                .title {
+                    font-size: 40px
+                }
+            }
+
+            @media (max-width: 560px) {
+                .nav {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 6px;
+                    top: 0;
+                    padding: 10px 16px;
+                    background: rgba(255, 240, 246, 0.92);
+                    backdrop-filter: blur(6px);
+                }
+
+                .nav a {
+                    margin-left: 0;
+                    margin-right: 12px
+                }
+
+                .nav>div:last-child {
+                    display: flex;
+                    flex-wrap: wrap
+                }
+
+                header.hero {
+                    padding: 100px 16px 48px;
+                    min-height: auto
+                }
+
+                .title {
+                    font-size: 28px
+                }
+
+                .lead {
+                    font-size: 14px
+                }
+
+                .cta {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px
+                }
+
+                .cta .btn {
+                    width: 100%;
+                    text-align: center
+                }
+
+                .gallery {
+                    grid-template-columns: 1fr
+                }
+
+                section {
+                    padding: 48px 16px
+                }
+
+                h2.section-title {
+                    font-size: 22px
+                }
+
+                .msg {
+                    font-size: 15px
+                }
+
+                .message-wrap {
+                    padding: 20px 16px
+                }
+
+                .profile-card {
+                    padding: 12px
+                }
+
+                .photo-img {
+                    height: 220px
+                }
+
+                .marry-question {
+                    font-size: 22px
+                }
+
+                .btn-playground {
+                    height: 200px
+                }
+
+                #yesBtn2 {
+                    left: calc(50% - 90px);
+                    font-size: 15px;
+                    padding: 12px 28px
+                }
+
+                #noBtn2 {
+                    left: calc(50% + 10px);
+                    font-size: 15px;
+                    padding: 12px 24px
+                }
+            }
+
+            @media (max-width: 380px) {
+                .title {
+                    font-size: 24px
+                }
+
+                .name {
+                    font-size: 17px
+                }
+
+                .gallery img {
+                    height: 160px
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <canvas class="conf" id="conf"></canvas>
+
+        <nav class="nav">
+            <div class="brand">💕 Birthday</div>
+            <div>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#message">Message</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-grid container">
+                <div>
+                    <h1 class="title fade-up">Happy Birthday, <span class="accent">MY Mutton Biriyani</span></h1>
+                    <p class="lead fade-up"> Jonmodin a amr torof theke ekti chotto upohar . <br> Jani valo hoyni but tao chesta Korlam 🙂 <br>
+                        Scroll down for a sunflower, some memories, and a special note made just for you.</p>
+                    <div class="cta fade-up">
+                        <button class="btn" id="openMsg">Open the special message</button>
+                        <button class="btn ghost" id="confettiBtn">Celebrate 🎉</button>
+                    </div>
+                </div>
+                <aside class="profile-card fade-up">
+                    <div class="profile-photo">
+                        <img class="photo-img" src="Rakhi.jpg" alt="Sunflower">
+                    </div>
+                    <div class="name">MY Mutton Biriyani</div>
+                    <div class="role">a gentle soul with a sunny smile</div>
+                    <div class="romance">Subho Jonmodin ❤️ <br> Khub Valo Thak , Anek boro ho Khusi thak ebong amr Pase
+                        thak 🙂. </div>
+                </aside>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title fade-up">About this little thing</h2>
+                <p class="subtitle fade-up">
+                    আজকের দিনটা তোর — ভালো থাক, হাসিখুশি থাক, এটাই চাই।
+                </p>
+
+                <div class="fade-up">
+                    <p style="max-width:840px;color:var(--muted)">
+                        শুভ জন্মদিন।
+                        তোর জীবনে সবসময় শান্তি, সুখ আর ভালো মুহূর্ত থাকুক।
+                        যেভাবে তুই সবাইকে ভালো অনুভব করাস, তেমনি আজকের দিনটা তোকে ভালো অনুভব করাক।
+                        হাসি মুখে থাক, নিজের মতো থাক, আর সব স্বপ্ন একে একে পূরণ হোক।
+                        আজকের দিনটা সুন্দর কাটুক — এটাই মন থেকে চাই।
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2 class="section-title fade-up">Memories & Moments</h2>
+                <p class="subtitle fade-up">Tor Sathe Katano Protek Ta Muhurto Amr Kache SpeciaL . </p>
+                <p class="subtitle fade-up">Evabei Pase Thaakis Hasi Khusi Jhamela Jhati k songe kore srata jibon
+                    eksathe katate chai . </p>
+                <div class="gallery fade-up">
+                    <img src="i4.png" alt="placeholder 1">
+                    <img src="i2.png" alt="placeholder 2">
+                    <img src="i3.png" alt="placeholder 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="message">
+            <div class="container">
+                <h2 class="section-title fade-up">A small, special message</h2>
+                <p class="subtitle fade-up">Click to reveal a little note — gentle and sincere for a first hello.</p>
+                <div class="message-wrap fade-up">
+                    <div class="msg" id="msgText">Click the button below to open the message meant just for you.</div>
+                    <button class="reveal" id="revealBtn">Reveal message</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div style="font-weight:700">Made with care • A tiny celebration</div>
+                <div style="margin-top:8px;color:var(--muted)">Tip: Marry me for this kind of gifts</div>
+
+                <!-- WILL YOU MARRY ME -->
+                <div class="marry-box">
+                    <div class="marry-question">💍 Will you marry me?</div>
+                    <div class="no-msg" id="noMsg">&nbsp;</div>
+                    <div class="btn-playground" id="btnPlayground">
+                        <button class="btn" id="yesBtn2">Yes 💖</button>
+                        <button id="noBtn2">No 😅</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- YES OVERLAY -->
+        <div id="yesOverlay">
+            <img src="proposal.jpeg" alt="Sunflower">
+            <div class="ty-text">Thank you 🙂🌻</div>
+            <div class="ty-sub">You just made everything brighter. 💖</div>
+            <div class="close-hint">tap anywhere to close</div>
+        </div>
+
+        <script>
+            // Fade-up on scroll
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+            }, { threshold: 0.18 });
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            // Message reveal
+            const msgEl = document.getElementById('msgText');
+            const revealBtn = document.getElementById('revealBtn');
+            revealBtn.addEventListener('click', () => {
+                msgEl.textContent = "Hey MY Mutton Biriyani 💖\nHappy Birthday! I wanted to make something small and bright for you — a sunflower to remind you of warm mornings and simple joys. Wishing you laughter, quiet moments of wonder, and a day that feels like a gentle hug.\n— A little greeting from someone who hopes to know you more.";
+                revealBtn.style.display = 'none';
+                startConfetti();
+            });
+
+            // Confetti engine
+            const canvas = document.getElementById('conf');
+            canvas.width = innerWidth; canvas.height = innerHeight;
+            const ctx = canvas.getContext('2d');
+            let pieces = [];
+            function Conf(x, y, dx, dy, size, color) {
+                this.x = x; this.y = y; this.dx = dx; this.dy = dy; this.size = size; this.color = color;
+            }
+            Conf.prototype.update = function () {
+                this.x += this.dx; this.y += this.dy; this.dy += 0.12;
+                if (this.y > canvas.height + 50) {
+                    this.y = -20; this.x = Math.random() * canvas.width; this.dy = -Math.random() * 3 - 1;
+                }
+            };
+            Conf.prototype.draw = function () {
+                ctx.fillStyle = this.color; ctx.fillRect(this.x, this.y, this.size, this.size);
+            };
+            let anim = false;
+            function startConfetti() {
+                const cols = ['#ff9ab4', '#ffd6e0', '#ff6b9a', '#ffd166'];
+                for (let i = 0; i < 150; i++) {
+                    pieces.push(new Conf(
+                        Math.random() * canvas.width, Math.random() * -canvas.height,
+                        (Math.random() - 0.5) * 3, Math.random() * 3 + 1,
+                        6 + Math.random() * 8, cols[Math.floor(Math.random() * cols.length)]
+                    ));
+                }
+                if (!anim) animateConf();
+            }
+            function animateConf() {
+                anim = true;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces.forEach(p => { p.update(); p.draw(); });
+                if (pieces.length > 0) requestAnimationFrame(animateConf); else anim = false;
+            }
+            document.getElementById('confettiBtn').addEventListener('click', startConfetti);
+            document.getElementById('openMsg').addEventListener('click', () => {
+                revealBtn.click(); window.location.hash = '#message';
+            });
+            addEventListener('resize', () => { canvas.width = innerWidth; canvas.height = innerHeight; });
+
+            // ── WILL YOU MARRY ME ───────────────────────────────────────
+            const noMessages = [
+                "Think again... 🥺",
+                "Are you sure? 💔",
+                "Please reconsider! 🌻",
+                "My heart says try again 💖",
+                "Wrong button! 😅",
+                "Nope, pick the other one! 🌸",
+                "I'll wait... 🥹",
+                "That can't be right! 💍",
+                "One more chance? 🌷",
+                "Think veeery carefully... 😏",
+                "Still no? I'm patient 😌",
+                "The Yes button misses you 💘"
+            ];
+            let noCount = 0;
+
+            const noBtn = document.getElementById('noBtn2');
+            const yesBtn = document.getElementById('yesBtn2');
+            const noMsg = document.getElementById('noMsg');
+            const playground = document.getElementById('btnPlayground');
+            const yesOverlay = document.getElementById('yesOverlay');
+
+            function moveNoBtn() {
+                const pw = playground.offsetWidth || 300;
+                const ph = playground.offsetHeight || 160;
+                const bw = noBtn.offsetWidth || 130;
+                const bh = noBtn.offsetHeight || 54;
+
+                const maxX = pw - bw - 4;
+                const maxY = ph - bh - 4;
+
+                // keep trying until not too close to yes button
+                const yesLeft = yesBtn.offsetLeft;
+                const yesTop = yesBtn.offsetTop;
+                let rx, ry, tries = 0;
+                do {
+                    rx = Math.floor(Math.random() * maxX);
+                    ry = Math.floor(Math.random() * maxY);
+                    tries++;
+                } while (
+                    tries < 30 &&
+                    Math.abs(rx - yesLeft) < bw + 20 &&
+                    Math.abs(ry - yesTop) < bh + 10
+                );
+
+                noBtn.style.left = rx + 'px';
+                noBtn.style.top = ry + 'px';
+
+                // show teasing message
+                noMsg.style.opacity = '0';
+                setTimeout(() => {
+                    noMsg.textContent = noMessages[noCount % noMessages.length];
+                    noMsg.style.opacity = '1';
+                    noCount++;
+                }, 120);
+            }
+
+            // Mouse hover — runs away before you can click
+            noBtn.addEventListener('mouseenter', moveNoBtn);
+            // Click fallback (touch / very fast cursor)
+            noBtn.addEventListener('click', moveNoBtn);
+            // Touch devices
+            noBtn.addEventListener('touchstart', function (e) {
+                e.preventDefault();
+                moveNoBtn();
+            }, { passive: false });
+
+            // YES — show overlay + confetti
+            yesBtn.addEventListener('click', () => {
+                startConfetti();
+                yesOverlay.style.display = 'flex';
+            });
+            // Close overlay
+            yesOverlay.addEventListener('click', () => {
+                yesOverlay.style.display = 'none';
+            });
+            // ── END MARRY ME ────────────────────────────────────────────
+        </script>
+    </body>
+
+</html>
